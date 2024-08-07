@@ -92,10 +92,13 @@ def main():
 
     #variable to increment by one after a valid answer until the end of the question list of dictionaries           
     i=0;
+    #greeting message
     print()
     print("Welcome to our quiz! I hope you're ready to find out which nation you belong to from the world of Avatar, The Last Air Bender?")
     print()
-#get userName, accept numbers but not pure whitespace- use try catch if userName has a value accept it and break, if it's an empty string raise a value error
+    
+
+    #get userName, accept numbers but not pure whitespace- use try catch if userName has a value accept it and break, if it's an empty string raise a value error
     while True:
         try:
             userName = input("Please enter your name when you're ready to start the quiz: ").strip();
@@ -108,7 +111,9 @@ def main():
     print()
     print(f"Great, {userName}. Let's start!")
     print()
-#while loop - keep going as long as i is less than the lengthe question array, which is 8
+
+
+    #while loop - keep going as long as i is less than the lengthe question array, which is 8
     while i< len(questions):
         # pull out our questions and choices
         question = questions[i]["question"]
@@ -128,9 +133,9 @@ def main():
         #again
         answer = input("Please choose A, B, C, or D: ").upper().strip()
         if answer == "A":
-            airNomads += 10
+            airNomads += 1ii0
             i += 1
-        elif answer == "B":
+        elif answer == "B":i
             earthKingdom += 10
             i += 1
         elif answer == "C":
@@ -147,7 +152,9 @@ def main():
         #max() returns the value of the variable with the max value
         
     result = max(airNomads, earthKingdom, waterTribes, fireNation)
-        #compare max value to each of the nation totals, this is not perfect because if two natiosn are tied, it will assign the resutl to the first one in the if elif statements, but it is what it is
+    
+
+    #compare max value to each of the nation totals, this is not perfect because if two natiosn are tied, it will assign the resutl to the first one in the if elif statements, but it is what it is
     nation =""
     if result == airNomads:
             nation = airNomadDescription
