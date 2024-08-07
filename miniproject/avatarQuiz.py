@@ -95,11 +95,16 @@ def main():
     print()
     print("Welcome to our quiz! I hope you're ready to find out which nation you belong to from the world of Avatar, The Last Air Bender?")
     print()
-#get userName, accept numbers but not pure whitespace
+#get userName, accept numbers but not pure whitespace- use try catch if userName has a value accept it and break, if it's an empty string raise a value error
     while True:
-        userName = input("Please enter your name when you're ready to start the quiz: ").strip();
-        if userName:
-            break
+        try:
+            userName = input("Please enter your name when you're ready to start the quiz: ").strip();
+            if userName:
+                break
+            elif userName == "":
+                raise ValueError("Come on, you can't leave your name blank!")
+        except ValueError as error:
+            print(error)
     print()
     print(f"Great, {userName}. Let's start!")
     print()
