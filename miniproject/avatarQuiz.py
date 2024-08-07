@@ -10,7 +10,7 @@ def main():
 
     #nation descripts for end of quiz
     airNomadDescription = "You're an Air Nomad! You like to take it easy and make friends along the way. But even though you're on the relaxed side of things, you're also incredibly resilient and will do whatever it takes to protect your friends."
-    waterTribeDescription = "You belong to the Water Tribles! You like to go with the flow most of the time, and you're the one your friends turn to when they need advice. But as kind as you are, if something threatens your friends or family, you become a serious force to be reckoned with."
+    waterTribeDescription = "You belong to the Water Tribes! You like to go with the flow most of the time, and you're the one your friends turn to when they need advice. But as kind as you are, if something threatens your friends or family, you become a serious force to be reckoned with."
     fireNationDescription = "You're in the Fire Nation! You may have a hot temper at times, but it's just because you're so passionate. You sometimes react strongly to things, but it's because you care deeply."
     earthKingdomDescription = "You're a part of the Earth Kingdom! You're an unstoppable force! You don't let things get in your way when it comes to getting what you want, and when they do, you go right through them. But even though you're strong-willed, you have a fun and silly side, too."
     
@@ -97,12 +97,11 @@ def main():
     print()
 #get userName, accept numbers but not pure whitespace
     while True:
-            userName = input("Please enter your name when you're ready to start the quiz: ").strip();
-            if userName:
-                break
-            
+        userName = input("Please enter your name when you're ready to start the quiz: ").strip();
+        if userName:
+            break
     print()
-    print(f"Great, {userName}, let's start!")
+    print(f"Great, {userName}. Let's start!")
     print()
 #while loop - keep going as long as i is less than the lengthe question array, which is 8
     while i< len(questions):
@@ -112,7 +111,7 @@ def main():
         #print question
         print(question)
         print()
-        #iterate over choices array and print each choice
+        #iterate over choices array with for loop and print each choice
         for choice in choices:
             print(choice)
         print()
@@ -148,7 +147,7 @@ def main():
     if result == airNomads:
             nation = airNomadDescription
     elif result == earthKingdom:
-            nation = earthKingdomDescription
+        nation = earthKingdomDescription
     elif result == waterTribes:
             nation = waterTribeDescription
     elif result == fireNation:
