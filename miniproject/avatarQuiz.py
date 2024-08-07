@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 
+#make a function
 def main():
     #variables for our 4 nations, we'll add points to each based on the user answers and then see which has the most points to see which nations they belong to
     airNomads = 0;
@@ -133,9 +134,9 @@ def main():
         #again
         answer = input("Please choose A, B, C, or D: ").upper().strip()
         if answer == "A":
-            airNomads += 1ii0
+            airNomads += 10
             i += 1
-        elif answer == "B":i
+        elif answer == "B":
             earthKingdom += 10
             i += 1
         elif answer == "C":
