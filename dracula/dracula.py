@@ -11,7 +11,7 @@ def main():
                 if "vampire" in line.lower():
                     #increment counter when a line contains vampire regardless of case
                     count += 1
-                    print(line)
+                    print(line.strip())
                     #write line to vampire.txt file
                     fang.write(line)
     print()
