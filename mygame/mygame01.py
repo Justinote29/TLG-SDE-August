@@ -184,7 +184,7 @@ while True:
 
 # final test- answer a riddle, if you answer wrong you die
     if gate_open == True and currentRoom == 'Garden Gate':
-        riddleAnswer = input("Our of nowhere a muscular squirrel jumped in front of the gate and said 'If you want to leave this place alive, you must answer my riddle correctly.  What has five fingers and isn't alive?  ")
+        riddleAnswer = input("Out of nowhere a muscular squirrel jumped in front of the gate and said 'If you want to leave this place alive, you must answer my riddle correctly.  What has five fingers and isn't alive?  ")
         if riddleAnswer.lower() == 'glove' or riddleAnswer.lower() == 'a glove':
             print("Correct, you escaped through the gate!!! You win!!")
             break
