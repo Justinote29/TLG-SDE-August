@@ -2,7 +2,8 @@
 """Driving a simple game framework with
    a dictionary object | Alta3 Research"""
 
-
+#import os
+import os
 #import module 
 from gameData import rooms
 
@@ -27,7 +28,7 @@ def showInstructions():
     """Show the game instructions when called"""
     #print a main menu and the commands
     print('''
-    RPG Game
+    Escape
     ========
     Commands:
       go [direction]
@@ -36,10 +37,11 @@ def showInstructions():
       use [item]
       open [item]
 
-    To Win: You must excape out the Garden gate!  Avoid the ghoul  and don't take too long, after 60 moves you're dead!!!!
+    To Win: You must escape out the Garden gate!  Avoid the ghoul  and don't take too long, after 60 moves you're dead!!!!
     ''')
 
 def showStatus():
+
     """determine the current status of the player"""
     # print the player's current location
     print('---------------------------')
@@ -56,6 +58,7 @@ def showStatus():
         print(rooms[currentRoom]['description'])  #if the ghoul is in the kitchen, print this
         if currentRoom == 'Kitchen' and 'ghoul' in rooms[currentRoom]['item']:
             print("Ouch!! A ghoul smacked you and decreased your health by 10!")
+    print('---------------------------')
     # print what the player is carrying
     print('Inventory: ', inventory)
     print('Health: ', health)
@@ -73,12 +76,15 @@ def showStatus():
                     print('You see ' + items)
     print("---------------------------")
 
+os.system('clear')
 showInstructions()
 
 # breaking this while loop means the game is over
 while True:
+
     showStatus()
     moves += 1
+
     # the player MUST type something in
     # otherwise input will keep asking
     move = ''
@@ -92,6 +98,7 @@ while True:
 
     #if they type 'go' first
     if move[0] == 'go':
+        os.system('clear')
         #check that they are allowed wherever they want to go
         if move[1] in rooms[currentRoom]:
             #set the current room to the new room
@@ -102,6 +109,7 @@ while True:
 
     #if they type 'get' first
     if move[0] == 'get' :
+        os.system('clear')
         # make two checks:
         # 1. if the current room contains an item
         # 2. if the item in the room matches the item the player wishes to get
@@ -122,6 +130,7 @@ while True:
    
    #if they type 'read' first, only the note in the bathroom can be read
     if move[0] == 'read':
+        os.system('clear')
         if move[1] not in inventory:
             print("Items not in your inventory can't be read")
         elif move[1] == 'note' and 'note' in inventory:
@@ -131,6 +140,7 @@ while True:
 
     #use functionality. If they are at the garden gate with the key, they can see a secret message revealed and must answer correctly to win
     if move[0] == 'use':
+        os.system('clear')
         if move[1] == 'key' and currentRoom == 'Garden Gate' and move[1] in inventory:
             gate_open = True
             print("You opened the gate!")
@@ -157,6 +167,7 @@ while True:
             print(move[1], " can't be used.")
 #open functionality - when boxes are opened remove them from inventory and replace them with key and pet rock
     if move[0] == 'open':
+        os.system('clear')
         if move[1] == 'mystery box 2' and move[1] in inventory:
             inventory.append('key')
             inventory.remove('mystery box 2')
