@@ -20,7 +20,7 @@ def showInstructions():
       use [item]
       open [item]
 
-    To Win: You must excape out the Garden gate!  Avoid the monsters!
+    To Win: You must excape out the Garden gate!  Avoid the ghoul  and don't take too long, after 60 moves you're dead!!!!
     ''')
    
 
@@ -105,7 +105,10 @@ while True:
         # make two checks:
         # 1. if the current room contains an item
         # 2. if the item in the room matches the item the player wishes to get
-        if "item" in rooms[currentRoom] and move[1] in rooms[currentRoom]['item']:
+        # don't let them get the ghoul
+        if move[1] == 'ghoul':
+            print("You can't get the ghoul!!!")
+        elif "item" in rooms[currentRoom] and move[1] in rooms[currentRoom]['item']:
             #add the item to their inventory
             inventory.append(move[1])
             #display a helpful message
@@ -126,7 +129,7 @@ while True:
         else:
             print(move[1] + "  can't be read")
 
-    #if they are at the garden gate with the key, they can see a secret message revealed and must answer correctly to win
+    #use functionality. If they are at the garden gate with the key, they can see a secret message revealed and must answer correctly to win
     if move[0] == 'use':
         if move[1] == 'key' and currentRoom == 'Garden Gate' and move[1] in inventory:
             gate_open = True
@@ -137,6 +140,7 @@ while True:
             print('You drank the potion and gained 20 health points!!!')
         elif move[1] == 'twinkie' and move[1] in inventory:
             inventory.remove(move[1])
+            health+=10
             print("You ate the twinkie and gained 10 health points!!!!!")
         elif move[1] == 'muscle man' and currentRoom == 'Kitchen' and rooms[currentRoom]['item']:
             rooms[currentRoom]['item'].remove('ghoul')

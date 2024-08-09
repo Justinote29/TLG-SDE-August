@@ -27,15 +27,15 @@ rooms = {
             'Garden Gate' :{
                     'north': 'Garden',
                     'description': 'Rats!!! The gate is locked!',
-                    'description2': 'You look closer and see a message scratched into the gate'
+                    'description2': 'The gate is open!!!'
                 },
-            'Living Room' : {
+            'Living Room' :{
                 'north' : 'Kitchen',
                 'west' : 'Bathroom',
                 'east' : 'Bedroom',
                 'description': 'You see a bathroom to the east and a bedroom to the west.'
                 },
-            'Bathroom' : {
+            'Bathroom' :{
                 'east' : 'Living Room',
                 'item' : ['note', 'comb'],
                 'message': 'There is only one word written on the note....the word "glove"',
