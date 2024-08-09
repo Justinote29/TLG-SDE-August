@@ -41,7 +41,7 @@ def showStatus():
     else: 
         print(rooms[currentRoom]['description'])  #if the ghoul is in the kitchen, print this
         if currentRoom == 'Kitchen' and 'ghoul' in rooms[currentRoom]['item']:
-            print("ouch a ghoul smacked you and decreased your health by 10!")
+            print("Ouch!! A ghoul smacked you and decreased your health by 10!")
     # print what the player is carrying
     print('Inventory: ', inventory)
     print('Health: ', health)
