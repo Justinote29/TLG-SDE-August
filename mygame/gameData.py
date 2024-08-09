@@ -33,7 +33,7 @@ rooms = {
                 'north' : 'Kitchen',
                 'west' : 'Bathroom',
                 'east' : 'Bedroom',
-                'description': 'You see a bathroom to the east and a bedroom to the west.'
+                'description': 'You see a bathroom to the west and a bedroom to the east.'
                 },
             'Bathroom' :{
                 'east' : 'Living Room',
