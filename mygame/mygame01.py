@@ -7,6 +7,22 @@
 from gameData import rooms
 
 
+
+# initial health
+health = 80
+
+# an inventory, which is initially empty
+inventory = []
+
+#boolean to toggle off once key is used
+gate_open = False
+
+#total moves
+moves = 0
+
+# start the player in the Hall
+currentRoom = 'Hall'
+
 def showInstructions():
     """Show the game instructions when called"""
     #print a main menu and the commands
@@ -22,8 +38,6 @@ def showInstructions():
 
     To Win: You must excape out the Garden gate!  Avoid the ghoul  and don't take too long, after 60 moves you're dead!!!!
     ''')
-   
-
 
 def showStatus():
     """determine the current status of the player"""
@@ -58,20 +72,6 @@ def showStatus():
                     items = ", ".join(rooms[currentRoom]['item'])
                     print('You see ' + items)
     print("---------------------------")
-# initial health
-health = 80
-
-# an inventory, which is initially empty
-inventory = []
-
-#boolean to toggle off once key is used
-gate_open = False
-
-#total moves
-moves = 0
-
-# start the player in the Hall
-currentRoom = 'Hall'
 
 showInstructions()
 
